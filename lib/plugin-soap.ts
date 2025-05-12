@@ -451,7 +451,6 @@ scimgateway.modifyGroup = async (baseEntity, id, attrObj, ctx) => {
         if (!result.return) {
           throw new Error(`${config[action].service}-removeUserFromGroup : Got empty response on soap request: ${soapRequest}`)
         }
-        null;
       } else { // add member to group
         const soapRequest = {
           groupID: id,
@@ -466,8 +465,8 @@ scimgateway.modifyGroup = async (baseEntity, id, attrObj, ctx) => {
         if (!result.return) {
           throw new Error(`assignUserToGroup : Got empty response on soap request: ${soapRequest}`)
         }
-        null;
       }
+      null;
     }
   } catch (err: any) {
     throw new Error(`${action} error: ${err.message}`)
